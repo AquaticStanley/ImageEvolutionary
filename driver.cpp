@@ -30,14 +30,6 @@ int main(int argc, char* argv[])
 
   Config config(filename);
 
-  // Load image into memory
-  // sf::Image image;
-  // if(!image.loadFromFile(config.imagePath))
-  // {
-  //   cout << "Image could not be loaded - exiting." << endl;
-  //   return 1;
-  // }
-
   // Apply a search strategy
   if(config.algorithmInd == 0)
   {
@@ -47,8 +39,32 @@ int main(int argc, char* argv[])
   {
     // Evolutionary Search
     EvolutionarySearch evoSearch(config);
-    evoSearch.getParentIndices();
-    evoSearch.getSurvivalIndices();
+
+    // For all runs in experiment
+    for(int r = 0; r < config.runsPerExperiment; r++)
+    {
+      // Initialize number of evals to initial population size
+      int numEvals = config.mu;
+
+      // Generate initial population and evaluate them
+
+      // Run main evolutionary loop
+      while(numEvals < config.numEvals)
+      {
+        
+
+        numEvals += config.lambda;
+      }
+
+
+
+
+
+
+    }
+
+    // evoSearch.getParentIndices();
+    // evoSearch.getSurvivalIndices();
   }
 
 

@@ -7,12 +7,13 @@
 #include "Config.h"
 #include <SFML/Graphics.hpp>
 #include <utility>
+#include "EvoImage.h"
 
 class EvolutionarySearch
 {
 private:
-  std::vector<sf::Image> mu;
-  std::vector<sf::Image> lambda;
+  std::vector<EvoImage> mu;
+  std::vector<EvoImage> lambda;
   int pixelClusterSize;
   sf::Image actualImage;
 
@@ -20,7 +21,7 @@ public:
   EvolutionarySearch(Config config);
 
   // Generate initial population
-  void initialPopulation();
+  void initializePopulation();
 
   // Generic functions to call from main
   std::function<std::vector<std::pair<int, int>>()> getParentIndices;
@@ -41,5 +42,4 @@ public:
   void kTournamentSurvivalSelect(int tournamentSize) const;
 
   void fitProportionalSurvivalSelect() const;
-
 };

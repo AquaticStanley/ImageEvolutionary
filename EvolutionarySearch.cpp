@@ -9,6 +9,8 @@ EvolutionarySearch::EvolutionarySearch(Config config)
 
   pixelClusterSize = config.pixelClusterSize;
 
+  initializePopulation();
+
   // Assign parent selection function
   switch(config.parentSelectionInd)
   {
@@ -66,7 +68,7 @@ EvolutionarySearch::EvolutionarySearch(Config config)
   }
 }
 
-void EvolutionarySearch::initialPopulation()
+void EvolutionarySearch::initializePopulation()
 {
 
 }
